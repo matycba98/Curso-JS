@@ -15,6 +15,20 @@
         let numero2 = parseFloat(prompt(nombre+ ESPACIO + "Indica el segundo numero para sumar"));
         let resultado12 = (numero1 + numero2);
         alert("El resultado es" + ESPACIO + resultado12);
+        let sexo = prompt('Hola ' + nombre + '. Sos hombre o mujer?').toUpperCase();
+        let edad = parseInt(prompt(nombre + '. Cuantos años tienes?'));
+        if(sexo == "HOMBRE" && edad > 18){
+            alert(nombre + ' eres hombre mayor de edad');
+        } else if(sexo == "HOMBRE" && edad < 18){
+            alert(nombre + ' eres hombre menor de edad');
+        } else if(sexo == "MUJER" && edad > 18){
+            alert(nombre + ' eres mujer mayor de edad');
+        } else if(sexo == "MUJER" && edad < 18) {
+            alert(nombre + ' eres mujer menor de edad');
+        } else {
+            alert(nombre + 'porfavor ingresa correctamente los datos');
+        }
+        alert('Saludos!');
     </script>
 </body>
 </html>
