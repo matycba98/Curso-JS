@@ -4,31 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumas entre 2 numeros</title>
+    <title>Mini calculadora</title>
+    <script src="./JS/miarchivo.js"></script>
 </head>
 <body>
-    <h1>Vamos a Sumar</h1>
-    <script>
-        let nombre = prompt("¿Cual es su nombre?");
-        const ESPACIO = (" ");
-        let numero1 = parseFloat(prompt("Bienvenido " + nombre + ESPACIO + "indica el primer numero para sumar"));
-        let numero2 = parseFloat(prompt(nombre+ ESPACIO + "Indica el segundo numero para sumar"));
-        let resultado12 = (numero1 + numero2);
-        alert("El resultado es" + ESPACIO + resultado12);
-        let sexo = prompt('Hola ' + nombre + '. Sos hombre o mujer?').toUpperCase();
-        let edad = parseInt(prompt(nombre + '. Cuantos años tienes?'));
-        if(sexo == "HOMBRE" && edad > 18){
-            alert(nombre + ' eres hombre mayor de edad');
-        } else if(sexo == "HOMBRE" && edad < 18){
-            alert(nombre + ' eres hombre menor de edad');
-        } else if(sexo == "MUJER" && edad > 18){
-            alert(nombre + ' eres mujer mayor de edad');
-        } else if(sexo == "MUJER" && edad < 18) {
-            alert(nombre + ' eres mujer menor de edad');
-        } else {
-            alert(nombre + 'porfavor ingresa correctamente los datos');
-        }
-        alert('Saludos!');
-    </script>
+    <h1>Calculadora</h1>
 </body>
 </html>
