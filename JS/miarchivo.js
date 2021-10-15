@@ -1,23 +1,30 @@
-let numero1, numero2, resultado;
-alert('Hola soy una mini calculadora para 2 números!');
-let operacion = parseInt(prompt('Porfavor indica el número de la operacion que deseas realizar\n1: Suma - 2: Resta - 3: Multiplicación - 4: División'));
-numero1 = parseFloat(prompt('Ingrese el 1er número:'));
-numero2 = parseFloat(prompt('Ingrese el 2do número:'));
-while(0 < operacion < 5){
-    switch(operacion){
-        case 1:
-            resultado = numero1 + numero2;
-            break;
-        case 2:
-            resultado = numero1 - numero2;
-            break;
-        case 3:
-            resultado = numero1 * numero2;
-            break;
-        case 4:
-            resultado = numero1 / numero2;
-            break;
-        }
-        alert('El resultado es: ' + resultado);
-        break;
+let precio, total, cuotas, resultado;
+function ingresarValores(){
+    precio = parseInt(prompt('Buen dia, porfavor indique el precio del producto a calcular:'));
+    cuotas = parseInt(prompt('Porfavor indique en numero de pagos:\n1 - (5% de descuento)\n3 - (Sin interés)\n6 - (Sin interés)\n12 - (10% de interés)'));
+}
+const calculoPrecio = () => {
+    if(cuotas == 1){
+        total = precio - (precio * 0.05);
+    } else if(cuotas == 3){
+        total = precio;
+    } else if(cuotas == 6){
+        total = precio;
+    } else if(cuotas == 12){
+        total = precio + (precio * 0.1);
+    } else {
+        alert('El número de pagos ingresado es inválido, intente nuevamente.');
+        ingresarValores();
     }
+}
+function cuotasTotal(){
+    ingresarValores();
+    calculoPrecio();
+    resultado = total / cuotas;
+    if(cuotas > 1){
+        alert('El total a pagar es: $' + total + ' en ' + cuotas + ' pagos de $' + resultado);
+    } else {
+        alert('El total en un pago es: $' + total);
+    }
+}
+cuotasTotal();
