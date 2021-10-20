@@ -1,30 +1,79 @@
-let precio, total, cuotas, resultado;
-function ingresarValores(){
-    precio = parseInt(prompt('Buen dia, porfavor indique el precio del producto a calcular:'));
-    cuotas = parseInt(prompt('Porfavor indique en numero de pagos:\n1 - (5% de descuento)\n3 - (Sin interés)\n6 - (Sin interés)\n12 - (10% de interés)'));
+let consulta1, consulta2;
+class Productos {
+  constructor(nombre, precio, cantidad, marca,) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.cantidad = cantidad;
+    this.marca = marca;
+    
+  }
+  presentacion() {
+    alert(
+      "Nombre del producto: " +
+        this.nombre +
+        " a un precio de " +
+        this.precio +
+        " con un stock de " +
+        this.cantidad +
+        ", de marca: " +
+        this.marca);
+  }
 }
-const calculoPrecio = () => {
-    if(cuotas == 1){
-        total = precio - (precio * 0.05);
-    } else if(cuotas == 3){
-        total = precio;
-    } else if(cuotas == 6){
-        total = precio;
-    } else if(cuotas == 12){
-        total = precio + (precio * 0.1);
-    } else {
-        alert('El número de pagos ingresado es inválido, intente nuevamente.');
-        ingresarValores();
-    }
+const teclado = new Productos(
+  "Teclado",
+   "$10000",
+   10,
+    "Razer"
+);
+const mouse = new Productos(
+  "Mouse",
+  "$5000",
+  15,
+  "Logitech"
+);
+const auricular = new Productos(
+  "Auricular",
+  "12500",
+  10,
+  "HyperX",
+);
+const monitor = new Productos(
+  "Monitor",
+  "30000",
+  5,
+  "BenQ",
+);
+
+function consultaF1() {
+  while (1 <= consulta1 <= 4) {
+    consulta1 = parseInt(
+      prompt(
+        "¿Que producto desea conocer?\n1: Teclado \n2: Mouse\n3: Auricular \n4: Monitor"
+      )
+    );
+    break;
+  }
+  switch (consulta1) {
+    case 1:
+      teclado.presentacion();
+      break;
+    case 2:
+      mouse.presentacion();
+      break;
+    case 3:
+      auricular.presentacion();
+      break;
+    case 4:
+      monitor.presentacion();
+      break;
+  }
+  consulta2 = parseInt(
+    prompt("¿Te gustaria saber sobre otros productos?\n1: Si\n2: No")
+  );
+  if (consulta2 == 1) {
+    return consultaF1();
+  } else {
+    alert("¡Proximamente traeremos más información, hasta pronto!");
+  }
 }
-function cuotasTotal(){
-    ingresarValores();
-    calculoPrecio();
-    resultado = total / cuotas;
-    if(cuotas > 1){
-        alert('El total a pagar es: $' + total + ' en ' + cuotas + ' pagos de $' + resultado);
-    } else {
-        alert('El total en un pago es: $' + total);
-    }
-}
-cuotasTotal();
+consultaF1();
