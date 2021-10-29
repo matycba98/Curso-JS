@@ -22,32 +22,36 @@ class Productos {
 }
 const teclado = new Productos(
   "Teclado",
-   "$10000",
+   "10000",
    10,
     "Razer"
 );
-productos.push(teclado);
+
 const mouse = new Productos(
   "Mouse",
-  "$5000",
+  "5000",
   15,
   "Logitech"
 );
-productos.push(mouse);
 const auricular = new Productos(
   "Auricular",
   "12500",
   10,
   "HyperX",
 );
-productos.push(auricular);
 const monitor = new Productos(
   "Monitor",
   "30000",
   5,
   "BenQ",
 );
-productos.push(monitor);
+productos.push(
+  teclado,
+  mouse,
+  auricular,
+  monitor,
+);
+console.log(productos);
 function consultaF1() {
   while (1 <= consulta1 <= 4) {
     consulta1 = parseInt(
@@ -80,7 +84,7 @@ function consultaF1() {
     alert("¡Proximamente traeremos más información, hasta pronto!");
   }
 }
-consultaF1();
+/* consultaF1(); */
 
 function consultaF1() {
 
@@ -129,21 +133,24 @@ function inscripcion(){
     while(newName == '' || 30 < newName.length || newName.length < 5){
         newName = prompt('Ingrese nombre del producto nuevamente (Entre 5 y 30 caracteres)');
     }
-    let newPrecio = prompt('Ingrese el precio');
-    while(newPrecio == '' || 7 < newPrecio.length || newPrecio.length < 3){
-        newPrecio = prompt('Ingrese el precio nuevamente (Entre 3 y 7 caracteres)');
+    let newPrice = prompt('Ingrese el precio');
+    while(newPrice == '' || 7 < newPrice.length || newPrice.length < 3){
+        newPrice = prompt('Ingrese el precio nuevamente (Entre 3 y 7 caracteres)');
     }
-    let newCantidad = prompt('Ingrese el stock');
-    while(newCantidad == '' || 7 < newCantidad.length || newCantidad.length < 1){
-        newCantidad = prompt('Ingrese el stock (Entre 1 y 7 caracteres)');
+    let newQuantity = prompt('Ingrese el stock');
+    while(newQuantity == '' || 7 < newQuantity.length || newQuantity.length < 1){
+        newQuantity = prompt('Ingrese el stock (Entre 1 y 7 caracteres)');
     }
-    let newMarca = prompt('Ingrese la marca');
-    while(newMarca == '' || 30 < newMarca.length || newMarca.length < 5){
-        newMarca = prompt('Ingrese la marca nuevamente (Entre 5 y 30 caracteres)');
+    let newBrand = prompt('Ingrese la marca');
+    while(newBrand == '' || 30 < newBrand.length || newBrand.length < 5){
+        newBrand = prompt('Ingrese la marca nuevamente (Entre 5 y 30 caracteres)');
     }
-    const newProductos = new Productos (newName, newPrecio, newCantidad, newMarca);
+    const newProductos = new Productos (newName, newPrice, newQuantity, newBrand);
     productos.push(newProductos);
     newProductos.presentacion();
 }
-inscripcion();
-console.log(productos)
+/* inscripcion();
+console.log(productos) */
+
+let Bienvenida = document.getElementById("Bienvenida")
+Bienvenida.innerHTML = "HOLA, BIENVENIDOS A SIMIL SHOP"
